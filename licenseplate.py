@@ -23,29 +23,30 @@ Input: “.BC.234” ; Output: 168
 """
 
 class Solution:
-    def licensePlate(self,str):
+    def licensePlate(str):
         characters = list(str)
         alphabetBlur = 0
         numBlur = 0
 
-        for i in range(2):
+        for i in range(3):
             if (characters[i] == "."):
                 alphabetBlur += 1
-        
-        for i in range(3, 6):
+
+        for i in range(3, 7):
             if (characters[i] == "."):
                 numBlur += 1
 
         if (alphabetBlur + numBlur == 0):
             return 0
-        
         output = 1
-        for i in range(1, alphabetBlur):
-            output = output*(26 - (3 - alphabetBlur) - i + 1)
+        if (alphabetBlur != 0):
+            for i in range(0, alphabetBlur):
+                output *= (26 - (3 - alphabetBlur) - i)
 
-        for i in range(1, numBlur):
-            output = output*(10-(4 - numBlur) - i + 1)
-        
+        if (numBlur != 0):
+            for i in range(0, numBlur):
+                output *= (10 - (4 - numBlur) - i)
+
         return output
 
 
