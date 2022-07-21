@@ -23,7 +23,7 @@ Input: “.BC.234” ; Output: 168
 """
 
 class Solution:
-    def licensePlate(str):
+    def licensePlate(self, str):
         characters = list(str)
         alphabetBlur = 0
         numBlur = 0
