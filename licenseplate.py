@@ -26,7 +26,7 @@ class Solution:
     def licensePlate(self,str):
         characters = str.split("")
         alphabetBlur = 0
-        numBlur
+        numBlur = 0
 
         for i in range(2):
             if (characters[i] == "."):
@@ -40,7 +40,7 @@ class Solution:
             return 0
         
         output = 1
-        for i in range(0, alphabetBlur):
+        for i in range(1, alphabetBlur):
             output = output*(26 - (3 - alphabetBlur) - i + 1)
 
         for i in range(1, numBlur):
